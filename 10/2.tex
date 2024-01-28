@@ -123,46 +123,41 @@ Q: Find the sum to $n$ terms of the series whose $n^{th}$ term is given by $(2n-
 
 \begin{table}[!ht]
     \centering
-        \input{10/tables/table2}
+        \input{./tables/table2}
     \caption{input parameters}
     \label{}
 \end{table}
 
+Sum of $n$ terms of AP is given by
 \begin{align}
-S_n &= \sum_{n=0}^{n-1} x(n) \\
-&=\sum_{n=0}^{n-1} (2n-1)^2 \\
-&=\sum _{n=0}^{n-1} 4n^2+1-4n \\
-&=\frac{4 (n-1)n(2n-1)}{6} + n -\frac{4 (n-1)n}{2} \\
-\because 1^2 + 2^2 + 3^2 + \ldots + n^2 = \frac{n \cdot (n + 1) \cdot (2n + 1)}{6}\\
-\because 1 + 2 + 3 + \ldots + n = \frac{n \cdot (n + 1)}{2}\\
-&=\frac{2 n(n-1)(2n-1)}{3} + n - 2(n)(n-1) \\
-(\text{taking} 
-\frac{ 2 n (n-1)}{3}
-\text{ common from first and third term;})\\
-&=\frac{2 n(n-1) }{3}(2n-1-3)+ n \\
-&=\frac{2 n(n-1) }{3}2(n-2) + n \\
-&=\frac{ 4n(n-1)(n-2)}{3} + n \\
-(\text{ taking }
-\frac{n}{3}
-\text{ common from both terms; }) \\
-&=\frac{n(4(n^2-3n+2)+3)}{3} \\
-&=\frac{n(4n^2-12n+11)}{3}  
+ y(n)&=\sum_{k=0}^{n} x(k)\\
+    &=x(n)*u(n)  
 \end{align}
-
-Therefore, sum of $n$ terms of the series whose $n^{th}$ term is given by $(2n-1)^2$ is $\frac{n(4n^2-12n+11)}{3} $  .
-
-
 \begin{align}
-x(n)&= (2n-1)^2 u(n) \\
+x(n)&= (2n+1)^2 u(n) \\
 X(z)&= \sum_{n=-\infty}^{\infty} x(n)z^{-n} \\
-&=\sum_{n=0}^{\infty}(2n-1)^2 z^{-n} \\
-&= U(z) + 8  z \frac{d(U(z))}{dz} + 4z^{2}\frac{d^2(U(z))}{dz^{2}} \\
-&= \frac{(1-z^{-1})^2 -8z^{-1}(2-z^{-1})}{(1-z^{-1})^3}
+&=\sum_{n=0}^{\infty}(2n+1)^2 z^{-n} \\
+&=\frac{4z^{-1}(z^{-1}+1)}{(1-z^{-1})^3} + \frac{1}{(1-z^{-1})} + \frac{4z^{-1}}{(1-z^{-1})^2}
 \end{align}
+\begin{align}
+    Y(z) &= X(z)U(z) \\
+    &= (\frac{4z^{-1}(z^{-1}+1)}{(1-z^{-1})^3} + \frac{1}{(1-z^{-1})} + \frac{4z^{-1}}{(1-z^{-1})^2})(\frac{1}{1-z^{-1}})\quad |z|>1\\
+    &= \frac{4z^{-1}(z^{-1}+1)}{(1-z^{-1})^4} + \frac{1}{(1-z^{-1})^2} + \frac{4z^{-1}}{(1-z^{-1})^3}\quad  |z|>1 \\
+    &=  \frac{1+9z^{-1}}{(1-z^{-1})} + \frac{25z^{-2}}{(1-z^{-1})^2} + \frac{24z^{-3}}{(1-z^{-1})^3} + \frac{8z^{-4}}{(1-z^{-1})^4} \quad |z|>1
+\end{align}
+On solving, we get
+\begin{align}
+    y\brak{n} &=(\frac{4n^{3}+12n^{2}+11n+3}{3} )u(n)
+\end{align}
+
+Therefore, sum of $n$ terms of the series whose $n^{th}$ term is given by $(2n+1)^2$ is $\frac{n(4n^2-1)}{3} $  .
+
+
+
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.70]{10/figs/fig2.png}
+    \includegraphics[scale=0.70]{./figs/fig2.png}
     \caption{ }
     \label{}
 \end{figure}
