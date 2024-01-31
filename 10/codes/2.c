@@ -37,6 +37,22 @@ int main() {
     } else {
         printf("Error opening file for writing.\n");
     }
+    
+    file = fopen("output.dat", "r");
+    if (file == NULL) {
+        printf("Error opening file!\n");
+        return 1;
+    }
+    
+    double sum = 0;
+    for (int i = 0; i < 16; ++i) {
+        int index;
+        double term;
+        fscanf(file, "%d %lf", &index, &term);
+        sum += term;
+    }
+    
+    printf("Sum of first 16 terms is %lf\n",sum);
 
     return 0;
 }
