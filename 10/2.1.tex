@@ -135,15 +135,14 @@ Sum of $n$ terms of AP is given by
 \end{align}
 \begin{align}
 x(n)&= (2n-1)^2 u(n) \\
-X(z)&=\sum_{n=0}^{\infty}\brak{4n^2z^{-n} + z^{-n} -4nz^{-n} }\\
-&=\frac{4z^{-1}(z^{-1}+1)}{(1-z^{-1})^3} + \frac{1}{(1-z^{-1})} - \frac{4z^{-1}}{(1-z^{-1})^2}
+   u(n) &\xleftrightarrow{\mathcal{Z}} \frac{1}{(1-z^{-1})}  \quad |z|>1\\
+   nu(n) &\xleftrightarrow{\mathcal{Z}} \frac{z^{-1}}{(1-z^{-1})^2} \quad |z|>1\\
+   n^2u(n) &\xleftrightarrow{\mathcal{Z}} \frac{z^{-1}(1+z^{-1})}{(1-z^{-1})^3} \quad |z|>1 \\
+ \implies  X(z)&=\frac{4z^{-1}(z^{-1}+1)}{(1-z^{-1})^3} + \frac{1}{(1-z^{-1})} - \frac{4z^{-1}}{(1-z^{-1})^2}
 \end{align}
 \begin{align}
  Y(z) &= X(z)U(z) \\
  &= \brak{\frac{4z^{-1}(z^{-1}+1)}{(1-z^{-1})^3} + \frac{1}{(1-z^{-1})} - \frac{4z^{-1}}{(1-z^{-1})^2}}\brak{\frac{1}{1-z^{-1}}}\\
- &= \frac{4z^{-1}(z^{-1}+1)}{(1-z^{-1})^4} + \frac{1}{(1-z^{-1})^2} - \frac{4z^{-1}}{(1-z^{-1})^3}\\
- &=  \frac{1+z^{-1}}{(1-z^{-1})} + \frac{9z^{-2}}{(1-z^{-1})^2} + \frac{16z^{-3}}{(1-z^{-1})^3} + \frac{8z^{-4}}{(1-z^{-1})^4} \\
- &= \frac{9z^{-2}-2z^{-1}+1}{(1-z^{-1})^4} \\
  &=\frac{z^4-2z^3+9z^2}{(z-1)^4} \quad |z|>1
 \end{align}
 \begin{align}
@@ -157,11 +156,27 @@ On solving, we get
 \begin{align}
     y\brak{n} &=\brak{\frac{4n^{3}-n+3}{3}}u(n) 
 \end{align}
+On replacing $n$ by $n-1$,
+\begin{align}
+    y\brak{n} &=\brak{\frac{4n^{3}-12n^2+11n}{3}}u(n) 
+\end{align}
 
-Therefore, sum of $n$ terms of the series whose $n^{th}$ term is given by $(2n-1)^2$ is $\frac{4n^3-n+3}{3} $  .
+\begin{align}
+y(n)&=\sum_{n=0}^{n-1} x(n) \\
+&=\sum_{n=0}^{n-1} (2n-1)^2u(n) \\
+&=\sum_{n=0}^{n-1} (4n^2+1-4n) \\
+&=4\frac{(n-1)(n)(2n-1)}{6} + n -4\frac{(n-1)(n)}{2} \\
+&=\frac{4(n-1)n}{6}\brak{2n-1-3} + n \\
+&=\frac{2(n-1)n}{3}\brak{2(n-2)} + n \\
+&=\frac{4(n-1)n(n-2)}{3} + n \\
+&=\frac{4n^3 -12 n^2 +11n}{3}
+\end{align}
 
+\begin{align}
+    y\brak{n} &=\brak{\frac{4n^{3}-12n^2+11n}{3}}u(n) 
+\end{align}
 
-
+Therefore, sum of $n$ terms of the series whose $n^{th}$ term is given by $(2n-1)^2$ is $\frac{n(4n^2-12n+11)}{3} $  .
 
 \begin{figure}[h]
     \centering
