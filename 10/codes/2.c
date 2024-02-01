@@ -45,14 +45,14 @@ int main() {
     }
     
     double sum = 0;
-    for (int i = 0; i < 16; ++i) {
+    for (int i = 0; i < 5; ++i) {
         int index;
         double term;
         fscanf(file, "%d %lf", &index, &term);
         sum += term;
     }
     
-    printf("Sum of first 16 terms is %lf\n",sum);
+    printf("Sum of first 5 terms is %lf\n",sum);
 
     return 0;
 }
