@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.1.3)  31 JAN 2024 21:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.1.3)  2 FEB 2024 01:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1202,8 +1202,8 @@ File: ts1txr.fd 2000/12/15 v3.1
 <./figs/fig2.png, id=36, 462.528pt x 346.896pt>
 File: ./figs/fig2.png Graphic file (type png)
 <use ./figs/fig2.png>
-Package pdftex.def Info: ./figs/fig2.png  used on input line 167.
-(pdftex.def)             Requested size: 323.76738pt x 242.82553pt.
+Package pdftex.def Info: ./figs/fig2.png  used on input line 164.
+(pdftex.def)             Requested size: 516.0pt x 387.0176pt.
 
 [2 <./figs/fig2.png>] (./2.1.aux)
 
@@ -1213,9 +1213,9 @@ Package rerunfilecheck Info: File `2.1.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 29150 strings out of 478287
- 574727 string characters out of 5849290
- 845457 words of memory out of 5000000
+ 29149 strings out of 478287
+ 574714 string characters out of 5849290
+ 846456 words of memory out of 5000000
  46710 multiletter control sequences out of 15000+600000
  550156 words of font info for 204 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1228,10 +1228,10 @@ fonts/txex.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsy.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on 2.1.pdf (2 pages, 66137 bytes).
+Output written on 2.1.pdf (2 pages, 65767 bytes).
 PDF statistics:
- 87 PDF objects out of 1000 (max. 8388607)
- 64 compressed objects within 1 object stream
- 22 named destinations out of 1000 (max. 500000)
+ 86 PDF objects out of 1000 (max. 8388607)
+ 63 compressed objects within 1 object stream
+ 21 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 

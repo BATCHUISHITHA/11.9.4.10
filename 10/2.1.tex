@@ -135,15 +135,15 @@ Sum of $n$ terms of AP is given by
 \end{align}
 \begin{align}
 x(n)&= (2n-1)^2 u(n) \\
-   u(n) &\xleftrightarrow{\mathcal{Z}} \frac{1}{(1-z^{-1})}  \quad |z|>1\\
-   nu(n) &\xleftrightarrow{\mathcal{Z}} \frac{z^{-1}}{(1-z^{-1})^2} \quad |z|>1\\
-   n^2u(n) &\xleftrightarrow{\mathcal{Z}} \frac{z^{-1}(1+z^{-1})}{(1-z^{-1})^3} \quad |z|>1 \\
- \implies  X(z)&=\frac{4z^{-1}(z^{-1}+1)}{(1-z^{-1})^3} + \frac{1}{(1-z^{-1})} - \frac{4z^{-1}}{(1-z^{-1})^2}
+   u(n) &\xleftrightarrow{\mathcal{Z}} \frac{1}{(1-z^{-1})}  \quad \abs{z}>1\\
+   nu(n) &\xleftrightarrow{\mathcal{Z}} \frac{z^{-1}}{(1-z^{-1})^2} \quad \abs{z}>1\\
+   n^2u(n) &\xleftrightarrow{\mathcal{Z}} \frac{z^{-1}(1+z^{-1})}{(1-z^{-1})^3} \quad \abs{z}>1 \\
+ \implies  X(z)&=\frac{4z^{-1}(z^{-1}+1)}{(1-z^{-1})^3} + \frac{1}{(1-z^{-1})} - \frac{4z^{-1}}{(1-z^{-1})^2} \quad \abs{z}>1
 \end{align}
 \begin{align}
  Y(z) &= X(z)U(z) \\
  &= \brak{\frac{4z^{-1}(z^{-1}+1)}{(1-z^{-1})^3} + \frac{1}{(1-z^{-1})} - \frac{4z^{-1}}{(1-z^{-1})^2}}\brak{\frac{1}{1-z^{-1}}}\\
- &=\frac{z^4-2z^3+9z^2}{(z-1)^4} \quad |z|>1
+ &=\frac{z^4-2z^3+9z^2}{(z-1)^4} \quad \abs{z}>1
 \end{align}
 \begin{align}
 y(n)&=\frac{1}{2\pi j}\oint_C Y(z) z^{n-1}\, dz \\
@@ -156,15 +156,12 @@ On solving, we get
 \begin{align}
     y\brak{n} &=\brak{\frac{4n^{3}-n+3}{3}}u(n) 
 \end{align}
-On replacing $n$ by $n-1$,
-\begin{align}
-    y\brak{n} &=\brak{\frac{4n^{3}-12n^2+11n}{3}}u(n) 
-\end{align}
-Therefore, sum of $n$ terms of the series whose $n^{th}$ term is given by $(2n-1)^2$ is $\frac{n(4n^2-12n+11)}{3} $  .
+
+Therefore, sum of $n$ terms of the series whose $n^{th}$ term is given by $(2n-1)^2$ is $\frac{4n^{3}-n+3}{3}$  .
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.70]{./figs/fig2.png}
+     \includegraphics[width=\columnwidth]{./figs/fig2.png}
     \caption{ }
     \label{}
 \end{figure}
