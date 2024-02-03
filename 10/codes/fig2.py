@@ -1,19 +1,36 @@
 import matplotlib.pyplot as plt
 import numpy as np
+from matplotlib.ticker import MultipleLocator
 
-# Load data from the "output.dat" file using numpy's loadtxt
+# Read data from the "output.dat" file
 data = np.loadtxt("output.dat")
 
-# Extract n_values and y_values from the data
-n_values = data[:, 0].astype(int)
-y_values = data[:, 1].astype(int)
+# Extract n, x, and y from the data
+n = data[:, 0]
+x = data[:, 1]
+y = data[:, 2]
 
-# Add a stem plot
-plt.stem(n_values, y_values, linefmt='-', markerfmt='o', basefmt='', label='Stem Plot')
-
+# Create a separate stem plot for x_values
+plt.figure(figsize=(10, 5))
+plt.subplot(1, 2, 1)
+plt.stem(n, x, linefmt='-', markerfmt='o', basefmt='', label='x_n')
 plt.xlabel('$n$')
-plt.ylabel('$y(n)$')
+plt.ylabel('$x(n)$')
+plt.gca().xaxis.set_major_locator(MultipleLocator(1))
 plt.grid(True)
 plt.legend()
+
+# Create a separate stem plot for y_values
+plt.subplot(1, 2, 2)
+plt.stem(n, y, linefmt='-', markerfmt='o', basefmt='', label='y_n')
+plt.xlabel('$n$')
+plt.ylabel('$y(n)$')
+plt.gca().xaxis.set_major_locator(MultipleLocator(1))
+plt.grid(True)
+plt.legend()
+
+plt.tight_layout()
 plt.savefig('../figs/fig2.png')
 plt.show()
+
+

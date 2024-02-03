@@ -1,35 +1,37 @@
 #include <stdio.h>
 #include <math.h>
 
-void linespace(int start, int stop, int step, int* n_values, int* y_values, int num_values) {
-    for (int i = 0; i < num_values; ++i) {
-        n_values[i] = start + i * step;
-        y_values[i] = pow((2*n_values[i] -1),2); // Adjust this line based on your specific calculation
+void linespace(int start, int stop, int step, int* n, int* x, int* y, int num) {
+    for (int i = 0; i < num; ++i) {
+       n[i]= start + i * step;
+        x[i]= pow((2*n[i] -1),2); 
+        y[i]= (4*pow(n[i],3)-n[i]+3)/3;
     }
 }
 
 int main() {
     // Define the range and step size
     int start = 0;
-    int stop = 15;
+    int stop = 10;
     int step = 1;
 
     // Calculate the number of values in the range
-    int num_values = (stop - start) / step + 1;
+    int num = (stop - start) / step + 1;
 
     // Allocate arrays to store the generated values
-    int n_values[num_values];
-    int y_values[num_values];
+    int n[num];
+    int x[num];
+    int y[num];
 
     // Call the linespace function
-    linespace(start, stop, step, n_values, y_values, num_values);
+    linespace(start, stop, step, n, x,y, num);
 
     // Save data to a file
     FILE* file = fopen("output.dat", "w");
 
     if (file != NULL) {
-        for (int i = 0; i < num_values; ++i) {
-            fprintf(file, "%d %d\n", n_values[i], y_values[i]);
+        for (int i = 0; i < num; ++i) {
+            fprintf(file, "%d %d %d\n", n[i], x[i], y[i]);
         }
 
         fclose(file);
@@ -44,15 +46,33 @@ int main() {
         return 1;
     }
     
+    //Let us consider some random n, i.e: n1=5
+        int n1 = 5;
     double sum = 0;
-    for (int i = 0; i < 5; ++i) {
+    for (int i = 0; i < n1+1; ++i) {
         int index;
-        double term;
-        fscanf(file, "%d %lf", &index, &term);
-        sum += term;
+        double term1;
+        double term2;
+        fscanf(file, "%d %lf %lf", &index, &term1,&term2);
+        sum += term1;
     }
     
-    printf("Sum of first 5 terms is %lf\n",sum);
+       
+    
+    printf("y(%d) is  %lf\n", n1, sum);
+    //to be written in .dat not print
+    
+    //verifying it using the formula derived in .tex
+    //formula
+    double  y_n= (4*pow(n1,3)-n1+3)/3;
+    printf("y(%d) according to the formula : %lf\n", n1, y_n);
+    
+    if(y_n == sum)
+    {
+    	printf("Observed and calculated values are same.\n");
+    }
+    else
+    printf("Error!!!\n");
 
     return 0;
 }
