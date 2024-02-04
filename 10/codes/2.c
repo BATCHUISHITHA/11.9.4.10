@@ -4,8 +4,8 @@
 void linespace(int start, int stop, int step, int* n, int* x, int* y, int num) {
     for (int i = 0; i < num; ++i) {
        n[i]= start + i * step;
-        x[i]= pow((2*n[i] -1),2); 
-        y[i]= (4*pow(n[i],3)-n[i]+3)/3;
+        x[i]= pow((2*n[i] +1),2); 
+        y[i]= (4*pow(n[i],3)+12*pow(n[i],2)+11*n[i]+3)/3;
     }
 }
 
@@ -64,7 +64,7 @@ int main() {
     
     //verifying it using the formula derived in .tex
     //formula
-    double  y_n= (4*pow(n1,3)-n1+3)/3;
+    double  y_n= (4*pow(n1,3)+12*pow(n1,2)+11*n1+3)/3 ;
     printf("y(%d) according to the formula : %lf\n", n1, y_n);
     
     if(y_n == sum)
