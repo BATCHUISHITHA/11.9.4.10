@@ -141,11 +141,15 @@ x(n)&= (2n+1)^2 u(n) \\
 \begin{align}
  Y(z) &= X(z)U(z) \\
  &= \brak{\frac{4z^{-1}(z^{-1}+1)}{(1-z^{-1})^3} + \frac{1}{(1-z^{-1})} + \frac{4z^{-1}}{(1-z^{-1})^2}}\brak{\frac{1}{1-z^{-1}}}\\
- &=\frac{1+9z^{-1}}{(1-z^{-1})} + \frac{25z^{-2}}{(1-z^{-1})^2} + \frac{24z^{-3}}{(1-z^{-1})^3} + \frac{8z^{-4}}{(1-z^{-1})^4} \quad \abs{z}>1 
+ &= \frac{4z^{-1}(z^{-1}+1)}{(1-z^{-1})^4} + \frac{1}{(1-z^{-1})^2} + \frac{4z^{-1}}{(1-z^{-1})^3}\\
+ &=\frac{1}{(1-z^{-1})} +\frac{9z^{-1}}{(1-z^{-1})} + \frac{25z^{-2}}{(1-z^{-1})^2} + \frac{24z^{-3}}{(1-z^{-1})^3} + \frac{8z^{-4}}{(1-z^{-1})^4} \quad \abs{z}>1 
 \end{align}
-On solving, we get
+
+By using Z-transform pairs,
+
 \begin{align}
-  y\brak{n} &=(\frac{4n^{3}+12n^{2}+11n+3}{3} )u(n)
+  y\brak{n}&= u(n) + 9u(n-1) + 25\frac{(n-1)}{2}u(n-2) + 24\frac{(n-1)(n-2)}{2}u(n-3) + 8\frac{(n-1)(n-2)(n-3)}{6}u(n-4) \\
+\implies  y\brak{n} &=(\frac{4n^{3}+12n^{2}+11n+3}{3} )u(n)
 \end{align}
 
 $\therefore$ Sum of $n$ terms of the series whose $n^{th}$ term is given by $(2n+1)^2$ is $\frac{4n^{3}+12n^{2}+11n+3}{3}$  .
