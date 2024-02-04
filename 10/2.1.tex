@@ -129,35 +129,26 @@ Q: Find the sum to $n$ terms of the series whose $n^{th}$ term is given by $(2n-
 \end{table}
 
 Sum of $n$ terms of AP is given by
+
 \begin{align}
- y(n)&=\sum_{k=0}^{n} x(k)\\
-    &=x(n)*u(n)  
-\end{align}
-\begin{align}
-x(n)&= (2n-1)^2 u(n) \\
+ y(n)&=x(n)*u(n) \\
+x(n)&= (2n+1)^2 u(n) \\
    u(n) &\xleftrightarrow{\mathcal{Z}} \frac{1}{(1-z^{-1})}  \quad \abs{z}>1\\
    nu(n) &\xleftrightarrow{\mathcal{Z}} \frac{z^{-1}}{(1-z^{-1})^2} \quad \abs{z}>1\\
    n^2u(n) &\xleftrightarrow{\mathcal{Z}} \frac{z^{-1}(1+z^{-1})}{(1-z^{-1})^3} \quad \abs{z}>1 \\
- \implies  X(z)&=\frac{4z^{-1}(z^{-1}+1)}{(1-z^{-1})^3} + \frac{1}{(1-z^{-1})} - \frac{4z^{-1}}{(1-z^{-1})^2} \quad \abs{z}>1
+ \implies  X(z)&=\frac{4z^{-1}(1+z^{-1})}{(1-z^{-1})^3} + \frac{1}{(1-z^{-1})} + \frac{4z^{-1}}{(1-z^{-1})^2} \quad \abs{z}>1
 \end{align}
 \begin{align}
  Y(z) &= X(z)U(z) \\
- &= \brak{\frac{4z^{-1}(z^{-1}+1)}{(1-z^{-1})^3} + \frac{1}{(1-z^{-1})} - \frac{4z^{-1}}{(1-z^{-1})^2}}\brak{\frac{1}{1-z^{-1}}}\\
- &=\frac{z^4-2z^3+9z^2}{(z-1)^4} \quad \abs{z}>1
-\end{align}
-\begin{align}
-y(n)&=\frac{1}{2\pi j}\oint_C Y(z) z^{n-1}\, dz \\
-&=\frac{1}{2\pi j}\oint_C \brak{\frac{z^4-2z^3+9z^2}{(z-1)^4}}z^{n-1} \, dz \\
-&=\frac{1}{2\pi j}\oint_C \brak{\frac{z^{n+3}-2z^{n+2}+9z^{n+1}}{(z-1)^4}}\, dz \\
-&=\frac{1}{(4-1)!}\frac{d^3}{dz^3}(z^{n+3}-2z^{n+2}+9z^{n+1}) \\ 
-&=\brak{\frac{(n+3)(n+2)(n+1)-2(n+2)(n+1)(n)+9(n+1)(n)(n-1)}{6}}u(n)
+ &= \brak{\frac{4z^{-1}(z^{-1}+1)}{(1-z^{-1})^3} + \frac{1}{(1-z^{-1})} + \frac{4z^{-1}}{(1-z^{-1})^2}}\brak{\frac{1}{1-z^{-1}}}\\
+ &=\frac{1+9z^{-1}}{(1-z^{-1})} + \frac{25z^{-2}}{(1-z^{-1})^2} + \frac{24z^{-3}}{(1-z^{-1})^3} + \frac{8z^{-4}}{(1-z^{-1})^4} \quad \abs{z}>1 
 \end{align}
 On solving, we get
 \begin{align}
-    y\brak{n} &=\brak{\frac{4n^{3}-n+3}{3}}u(n) 
+  y\brak{n} &=(\frac{4n^{3}+12n^{2}+11n+3}{3} )u(n)
 \end{align}
 
-$\therefore$ Sum of $n$ terms of the series whose $n^{th}$ term is given by $(2n-1)^2$ is $\frac{4n^{3}-n+3}{3}$  .
+$\therefore$ Sum of $n$ terms of the series whose $n^{th}$ term is given by $(2n+1)^2$ is $\frac{4n^{3}+12n^{2}+11n+3}{3}$  .
 
 \begin{figure}[h]
     \centering
