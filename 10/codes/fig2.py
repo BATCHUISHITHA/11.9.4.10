@@ -9,20 +9,24 @@ data = np.loadtxt("output.dat")
 n = data[:, 0]
 x = data[:, 1]
 y = data[:, 2]
+Simulation = data[:, 3]
 
-# Create a separate stem plot for x_values
-plt.figure(figsize=(10, 5))
+# Create two separate plots
+plt.figure(figsize=(12, 6))
+
+# Plot for x(n)
 plt.subplot(1, 2, 1)
-plt.stem(n, x, linefmt='-', markerfmt='o', basefmt='', label='x_n')
+plt.stem(n, x, linefmt='-', markerfmt='o', basefmt='', label='$x(n)$')
 plt.xlabel('$n$')
 plt.ylabel('$x(n)$')
 plt.gca().xaxis.set_major_locator(MultipleLocator(1))
 plt.grid(True)
 plt.legend()
 
-# Create a separate stem plot for y_values
+# Plot for y(n) and Simulation
 plt.subplot(1, 2, 2)
-plt.stem(n, y, linefmt='-', markerfmt='o', basefmt='', label='y_n')
+plt.stem(n, y, linefmt='r-', markerfmt='ro', basefmt='r-', label=r'$y(n)$')
+plt.stem(n, Simulation, linefmt='g-', markerfmt='gx', basefmt='g-', label='Simulation')
 plt.xlabel('$n$')
 plt.ylabel('$y(n)$')
 plt.gca().xaxis.set_major_locator(MultipleLocator(1))

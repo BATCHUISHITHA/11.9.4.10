@@ -28,10 +28,25 @@ int main() {
 
     // Save data to a file
     FILE* file = fopen("output.dat", "w");
+    
+    int u_n = num >= 0 ? 1 : 0;
+    int u_n_minus_1 = (num - 1) >= 0 ? 1 : 0;
+    int u_n_minus_2 = (num - 2) >= 0 ? 1 : 0;
+    int u_n_minus_3 = (num - 3) >= 0 ? 1 : 0;
+    int u_n_minus_4 = (num - 4) >= 0 ? 1 : 0;
+    
+    // Calculate values for-->simulation
+        int Simulation = u_n + 9*u_n_minus_1 + 25*(num-1)*u_n_minus_2 + 12*(num-1)*(num-2)*u_n_minus_3 + 8*(num-1)*(num-2)*(num-3)*u_n_minus_4/6;
+
+        
 
     if (file != NULL) {
         for (int i = 0; i < num; ++i) {
-            fprintf(file, "%d %d %d\n", n[i], x[i], y[i]);
+         
+    // Calculate values for-->simulation
+        int Simulation = u_n + 9*u_n_minus_1 + 25*(i-1)*u_n_minus_2 + 12*(i-1)*(i-2)*u_n_minus_3 + 8*(i-1)*(i-2)*(i-3)*u_n_minus_4/6;
+
+            fprintf(file, "%d %d %d %d\n", n[i], x[i], y[i], Simulation);
         }
 
         fclose(file);
@@ -53,17 +68,14 @@ int main() {
         int index;
         double term1;
         double term2;
-        fscanf(file, "%d %lf %lf", &index, &term1,&term2);
+        double term3;
+        fscanf(file, "%d %lf %lf %lf", &index, &term1,&term2,&term3);
         sum += term1;
     }
     
        
     
     printf("y(%d) is  %lf\n", n1, sum);
-    //to be written in .dat not print
-    
-    //verifying it using the formula derived in .tex
-    //formula
     double  y_n= (4*pow(n1,3)+12*pow(n1,2)+11*n1+3)/3 ;
     printf("y(%d) according to the formula : %lf\n", n1, y_n);
     
