@@ -128,9 +128,7 @@ Q: Find the sum to $n$ terms of the series whose $n^{th}$ term is given by $(2n-
     \caption{input parameters}
     \label{}
 \end{table}
-
 Sum of $n$ terms of AP is given by
-
 \begin{align}
  y(n)&=x(n)*u(n) \\
 x(n)&= (2n+1)^2 u(n) 
@@ -164,17 +162,12 @@ n^3u(n) \xleftrightarrow{\mathcal{Z}} \frac{z^{-1}\brak{1+4z^{-1}+z^{-2}}}{\brak
  \end{equation}
 Now from~\eqref{eq:11.9.4.10.1.eq},~\eqref{eq:11.9.4.10.2.eq},~\eqref{eq:11.9.4.10.3.eq},~\eqref{eq:11.9.4.10.4.eq},
  ~\eqref{eq:11.9.4.10.5.eq}
-
 By using  inverse Z-transform pairs,
-
-
 \begin{align}
   y\brak{n}&= u(n) + 9u(n-1) + 25(n-1)u(n-2) + 24\frac{(n-1)(n-2)}{2}u(n-3) + 8\frac{(n-1)(n-2)(n-3)}{6}u(n-4) \\
 \implies  y\brak{n} &=\brak{\frac{4n^{3}+12n^{2}+11n+3}{3}}u(n)
 \end{align}
-
 $\therefore$ Sum of $n$ terms of the series whose $n^{th}$ term is given by $(2n+1)^2$ is $\frac{4n^{3}+12n^{2}+11n+3}{3}$  .
-
 \begin{figure}[h]
     \centering
      \includegraphics[width=\columnwidth]{./figs/fig2.png}
