@@ -1,12 +1,39 @@
 #include <stdio.h>
 #include <math.h>
 
+// Define the signal x(n) = (2n + 1)^2 for n = 0 to 5
+int signal(int n) {
+    return pow(((2 * n) + 1) ,2);
+}
+
+// Define the unit step function u(n)
+int u(int n) {
+    return (n >= 0) ? 1 : 0;
+}
+
 void linespace(int start, int stop, int step, int* n, int* x, int* y, int num) {
     for (int i = 0; i < num; ++i) {
        n[i]= start + i * step;
         x[i]= pow((2*n[i] +1),2); 
         y[i]= (4*pow(n[i],3)+12*pow(n[i],2)+11*n[i]+3)/3;
     }
+}
+
+int convolution() {
+    // Result of convolution
+    int y[6] = {0}; // Initialize with zeros
+    // Perform convolution
+    for (int n = 0; n <=5 ; n++) {
+        for (int k = 0; k <= n; k++) {
+            y[n] += signal(k) * u(n - k);
+        }
+    }
+    // Print the result
+    printf("Result of convolution:\n");
+    for (int i = 0; i <= 5; i++) {
+        printf("y[%d] = %.2d\n", i, y[i]);
+    }
+    return y[5];
 }
 
 int main() {
@@ -38,7 +65,7 @@ int main() {
     // Calculate values for-->simulation
         int Simulation = u_n + 9*u_n_minus_1 + 25*(num-1)*u_n_minus_2 + 12*(num-1)*(num-2)*u_n_minus_3 + 8*(num-1)*(num-2)*(num-3)*u_n_minus_4/6;
 
-        
+       
 
     if (file != NULL) {
         for (int i = 0; i < num; ++i) {
@@ -60,28 +87,14 @@ int main() {
         printf("Error opening file!\n");
         return 1;
     }
-    
-    //Let us consider some random n, i.e: n1=5
-        int n1 = 5;
-    double sum = 0;
-    for (int i = 0; i < n1+1; ++i) {
-        int index;
-        double term1;
-        double term2;
-        double term3;
-        fscanf(file, "%d %lf %lf %lf", &index, &term1,&term2,&term3);
-        sum += term1;
-    }
-    
-       
-    
-    printf("y(%d) is  %lf\n", n1, sum);
-    double  y_n= (4*pow(n1,3)+12*pow(n1,2)+11*n1+3)/3 ;
+    int n1=5;
+    double  y_n = (4*pow(n1,3)+12*pow(n1,2)+11*n1+3)/3 ;
     printf("y(%d) according to the formula : %lf\n", n1, y_n);
-    
+    int sum = convolution();
+    printf("The value of y(5) using convolution is: %d\n",sum); 
     if(y_n == sum)
     {
-    	printf("Observed and calculated values are same.\n");
+    	printf("y(5) using convolution and formula are same.\n");
     }
     else
     printf("Error!!!\n");
